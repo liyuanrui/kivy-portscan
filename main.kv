@@ -1,0 +1,146 @@
+<Label>:
+    font_name: 'droid.ttf'
+    bold:True
+<Dutton@Button>:
+    font_name: 'droid.ttf'
+    markup:True
+<TextInput>:
+    font_name: 'droid.ttf'
+    bold:True
+<ToggleButton>:
+    font_name: 'droid.ttf'
+    
+<MyLayout>:
+    address:address
+    portnum:portnum
+    output:output
+    result:result
+    tnum:tnum
+    orientation: 'vertical'
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+            source:'back.jpg'
+
+    Label:
+        text: '网络地址: (网段以0结尾，多个空格隔开)'
+        text_size: (self.width,None)
+        halign: 'left'
+        valign: 'top'
+        size_hint: (1,None)
+        height: '48dp'
+        padding: (36,36)
+    TextInput:
+        id: address
+        text_size: (self.width,None)
+        halign: 'left'
+        valign: 'top'                
+        size_hint: (1,None)
+        height: '48dp'
+        text: '127.0.0.1'
+        padding: (36,36)         
+    Label:
+        size_hint_y:None
+        height:'6dp'
+    BoxLayout:
+        orientation:'horizontal'
+        size_hint_y:None
+        height:'48dp'
+        
+        Label:
+            text: '端口范围: (指定端口一个就行)'
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.7,None)
+            height: '48dp'
+            padding: (36,36)
+        TextInput:
+            id: portnum
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.3,None)
+            height: '48dp'
+            text: '0,655'
+            padding: (36,36)
+    Label:
+        size_hint_y:None
+        height:'6dp'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:None
+        height:'48dp'
+        Label:
+            text: '线程数: (默认25)'
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.7,None)
+            height: '48dp'
+            padding: (36,36)
+        TextInput:
+            id: tnum
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.3,None)
+            height: '48dp'
+            text: '25'
+            padding: (36,36)
+          
+    Label:
+        size_hint_y:None
+        height: '20dp'
+    Dutton:
+        id:start
+        text: '[b]开始扫描[/b]'
+        size_hint: (1,None)
+        height: '64dp'
+        background_normal:'9.png'
+        background_down:'9.png'
+        on_press: root.start()
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:None
+        height:'48dp'
+        Label:
+            text: '扫描状态:'
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.3,None)
+            height: '48dp'
+            padding:(36,36)
+         
+        Label:
+            id: output
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.7,None)
+            height: '48dp'
+            padding:(36,36)
+        
+    Label:
+        text: '扫描结果:'
+        text_size: (self.width,None)
+        halign: 'left'
+        valign: 'top'
+        size_hint: (1,None)
+        height: '48dp'
+        padding:(36,36)
+    ScrollView:
+   
+        Label:
+            id: result
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint_y:None
+            height: self.texture_size[1]
+            padding:(36,36)
+    
+    
+  
