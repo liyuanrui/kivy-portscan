@@ -16,6 +16,7 @@
     output:output
     result:result
     tnum:tnum
+    timeout:timeout
     orientation: 'vertical'
     canvas:
         Rectangle:
@@ -88,6 +89,30 @@
             size_hint: (0.3,None)
             height: '48dp'
             text: '25'
+            padding: (36,36)
+    Label:
+        size_hint_y:None
+        height:'6dp'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:None
+        height:'48dp'
+        Label:
+            text: 'socket超时秒数: (默认3)'
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.7,None)
+            height: '48dp'
+            padding: (36,36)
+        TextInput:
+            id: timeout
+            text_size: (self.width,None)
+            halign: 'left'
+            valign: 'top'
+            size_hint: (0.3,None)
+            height: '48dp'
+            text: '3'
             padding: (36,36)
           
     Label:

@@ -10,9 +10,6 @@ import socket
 import threadpool
 import os
 
-socket.setdefaulttimeout(1)
-
-
 
 class MyLayout(BoxLayout):
     address=ObjectProperty()
@@ -20,6 +17,9 @@ class MyLayout(BoxLayout):
     output=ObjectProperty()
     result=ObjectProperty()
     tnum=ObjectProperty()
+    timeout=ObjectProperty()
+    
+    
     
     def start(self):
         num=self.portnum.text.split(',')
@@ -92,4 +92,7 @@ class MyLayout(BoxLayout):
 class MainApp(App):
     def build(self):
         return MyLayout()
+    def on_start(self):
+        socket.setdefaulttimeout(int(self.root.ids.timeout.text))
+
 MainApp().run()
