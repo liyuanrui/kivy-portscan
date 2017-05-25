@@ -18,11 +18,12 @@
     tnum:tnum
     timeout:timeout
     orientation: 'vertical'
+    padding:(36,36)
     canvas:
         Rectangle:
             pos:self.pos
             size:self.size
-            source:'back.jpg'
+            source:'22.jpg'
 
     Label:
         text: '网络地址: (网段以0结尾，多个空格隔开)'
@@ -31,16 +32,14 @@
         valign: 'top'
         size_hint: (1,None)
         height: '48dp'
-        padding: (36,36)
+        padding:(10,0.5*(self.height-self.line_height))
     TextInput:
-        id: address
-        text_size: (self.width,None)
-        halign: 'left'
-        valign: 'top'                
+        id: address          
         size_hint: (1,None)
         height: '48dp'
         text: '127.0.0.1'
-        padding: (36,36)         
+        padding:(10,0.5*(self.height-self.line_height))
+        background_normal:'3.png'       
     Label:
         size_hint_y:None
         height:'6dp'
@@ -54,18 +53,16 @@
             text_size: (self.width,None)
             halign: 'left'
             valign: 'top'
-            size_hint: (0.7,None)
+            size_hint: (0.6,None)
             height: '48dp'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
         TextInput:
             id: portnum
-            text_size: (self.width,None)
-            halign: 'left'
-            valign: 'top'
-            size_hint: (0.3,None)
+            size_hint: (0.4,None)
             height: '48dp'
             text: '0,655'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
+            background_normal:'3.png'
     Label:
         size_hint_y:None
         height:'6dp'
@@ -78,18 +75,17 @@
             text_size: (self.width,None)
             halign: 'left'
             valign: 'top'
-            size_hint: (0.7,None)
+            size_hint: (0.6,None)
             height: '48dp'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
+
         TextInput:
             id: tnum
-            text_size: (self.width,None)
-            halign: 'left'
-            valign: 'top'
-            size_hint: (0.3,None)
+            size_hint: (0.4,None)
             height: '48dp'
             text: '25'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
+            background_normal:'3.png'
     Label:
         size_hint_y:None
         height:'6dp'
@@ -102,18 +98,17 @@
             text_size: (self.width,None)
             halign: 'left'
             valign: 'top'
-            size_hint: (0.7,None)
+            size_hint: (0.6,None)
             height: '48dp'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
+
         TextInput:
             id: timeout
-            text_size: (self.width,None)
-            halign: 'left'
-            valign: 'top'
-            size_hint: (0.3,None)
+            size_hint: (0.4,None)
             height: '48dp'
             text: '3'
-            padding: (36,36)
+            padding:(10,0.5*(self.height-self.line_height))
+            background_normal:'3.png'
           
     Label:
         size_hint_y:None
@@ -123,8 +118,8 @@
         text: '[b]开始扫描[/b]'
         size_hint: (1,None)
         height: '64dp'
-        background_normal:'9.png'
-        background_down:'9.png'
+        background_normal:'3.png'
+        background_down:'2.png'
         on_press: root.start()
     BoxLayout:
         orientation: 'horizontal'
@@ -137,7 +132,7 @@
             valign: 'top'
             size_hint: (0.3,None)
             height: '48dp'
-            padding:(36,36)
+            padding:(10,0.5*(self.height-self.line_height))
          
         Label:
             id: output
@@ -146,7 +141,7 @@
             valign: 'top'
             size_hint: (0.7,None)
             height: '48dp'
-            padding:(36,36)
+            padding:(10,0.5*(self.height-self.line_height))
         
     Label:
         text: '扫描结果:'
@@ -155,9 +150,8 @@
         valign: 'top'
         size_hint: (1,None)
         height: '48dp'
-        padding:(36,36)
+        padding:(10,0.5*(self.height-self.line_height))
     ScrollView:
-   
         Label:
             id: result
             text_size: (self.width,None)
@@ -165,7 +159,7 @@
             valign: 'top'
             size_hint_y:None
             height: self.texture_size[1]
-            padding:(36,36)
+
     
     
   

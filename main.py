@@ -57,7 +57,7 @@ class MyLayout(BoxLayout):
                         else:
                             self.ids.result.text += '%s:%s\n'%(naddr,port)
                     except Exception,e:
-                        self.ids.output.text='正在扫描 %s:%s'%(naddr,port)
+                        self.ids.output.text=u'正在扫描 %s:%s'%(naddr,port)
                     finally:
                         s.close()                             
             else:
@@ -73,7 +73,7 @@ class MyLayout(BoxLayout):
                         self.ids.result.text += '%s:%s\n'%(addr,port)
 
                 except Exception,e:
-                    self.ids.output.text='正在扫描 %s:%s'%(addr,port)
+                    self.ids.output.text=u'正在扫描 %s:%s'%(addr,port)
                 finally:
                     s.close()
         '''
